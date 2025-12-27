@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">My Bio</div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#what">What I Do</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#thinking">Mindset</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-text">
+        <p class="welcome">WELCOME TO MY WORLD</p>
+
+        <h1>
+            Hi, I’m <span class="gradient-text">Rey Chaudhary</span><br>
+            a Developer.
+        </h1>
+
+        <p class="description">
+            I build clean, efficient software with a focus on performance and user experience.
+        </p>
+
+        <div class="socials">
+            <a href="https://github.com/YOUR_USERNAME" class="glow-btn" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/YOUR_USERNAME" class="glow-btn" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <img src="images/profile.png" alt="Profile Picture">
+    </div>
+</section>
+
+<!-- WHAT I DO -->
+<section class="section fade-in" id="what">
+    <h2><span class="gradient-text">What I Do</span></h2>
+
+    <div class="section-divider"></div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Clean Software Design</h3>
+            <p>I write readable, scalable, and maintainable code.</p>
+        </div>
+
+        <div class="card">
+            <h3>UI / UX Focus</h3>
+            <p>I care about layout, flow, and visual clarity.</p>
+        </div>
+
+        <div class="card">
+            <h3>Problem Solving</h3>
+            <p>I break complex problems into simple, efficient solutions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section fade-in" id="projects">
+    <h2><span class="gradient-text">Projects</span></h2>
+
+    <div class="section-divider"></div>
+
+    <div class="projects">
+        <div class="project">
+            <h3>Chess Visualization Engine</h3>
+            <p>Minimax + alpha-beta pruning with real-time visualization.</p>
+        </div>
+
+        <div class="project">
+            <h3>Image Processing Toolkit</h3>
+            <p>Java-based image transformations and filters.</p>
+        </div>
+
+        <div class="project">
+            <h3>Personal Portfolio</h3>
+            <p>Custom-built website with animated UI and clean structure.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- HOW I THINK -->
+<section class="section fade-in" id="thinking">
+    <h2><span class="gradient-text">How I Think</span></h2>
+
+    <div class="section-divider"></div>
+
+    <div class="thinking-box">
+        <p>
+            I enjoy understanding <strong>why</strong> things work, not just how to use them.
+            I focus on clarity, efficiency, and building systems that feel intentional.
+            I like breaking complex ideas into clean, logical pieces.
+        </p>
+    </div>
+</section>
+
+
+<!-- SCROLL ANIMATION SCRIPT -->
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+});
+
+document.querySelectorAll(".fade-in").forEach(section => {
+    observer.observe(section);
+});
+</script>
+
+</body>
+</html>

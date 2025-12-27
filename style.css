@@ -1,0 +1,207 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE */
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #1f232a;
+    color: white;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 80px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+/* ================= HERO ================= */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.welcome {
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #999;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin: 15px 0;
+}
+
+.description {
+    color: #bbb;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* ================= GRADIENT TEXT ================= */
+.gradient-text {
+    background: linear-gradient(90deg, #ff4ecd, #7f5cff, #3f8cff, #ff4ecd);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-flow 4s linear infinite;
+}
+
+@keyframes text-flow {
+    from { background-position: 0% 50%; }
+    to { background-position: 300% 50%; }
+}
+
+/* ================= GLOW BUTTON ================= */
+.glow-btn {
+    position: relative;
+    padding: 14px 30px;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    background: #1f232a;
+    overflow: hidden;
+}
+
+.glow-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 3px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #ff4ecd, #7f5cff, #3f8cff, #ff4ecd);
+    background-size: 300% 100%;
+    animation: border-move 3s linear infinite;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+@keyframes border-move {
+    from { background-position: 0% 50%; }
+    to { background-position: 300% 50%; }
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 80px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Divider */
+.section-divider {
+    width: 160px;
+    height: 4px;
+    margin: 25px 0 40px 0; /* ← left aligned */
+    border-radius: 3px;
+    background: linear-gradient(
+        90deg,
+        #ff4ecd,
+        #7f5cff,
+        #3f8cff
+    );
+    background-size: 300% 100%;
+    animation: divider-flow 4s linear infinite;
+}
+
+
+@keyframes divider-flow {
+    from { background-position: 0% 50%; }
+    to { background-position: 300% 50%; }
+}
+
+/* ================= CARDS & PROJECTS ================= */
+.cards,
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.card,
+.project {
+    background: #1b1f26;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #2a2f38;
+    transition: 0.3s ease;
+}
+
+/* HOVER GLOW */
+.card:hover,
+.project:hover,
+.thinking-box:hover {
+    box-shadow:
+        0 0 15px rgba(255, 78, 205, 0.4),
+        0 0 25px rgba(127, 92, 255, 0.3),
+        0 0 35px rgba(63, 140, 255, 0.2);
+    transform: translateY(-4px);
+}
+
+/* ================= THINKING BOX ================= */
+.thinking-box {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px 35px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.thinking-box p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #ddd;
+}
+
+/* ================= FADE-IN ================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= IMAGE ================= */
+.hero-image img {
+    width: 350px;
+    border-radius: 12px;
+}
