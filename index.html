@@ -6,6 +6,21 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+const text = "I build clean, efficient software.";
+let index = 0;
+const speed = 60; // typing speed (lower = faster)
+
+function typeEffect() {
+    if (index < text.length) {
+        document.getElementById("typing-text").textContent += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, speed);
+    }
+}
+
+window.onload = typeEffect;
+</script>
 <body>
 
 <!-- NAVBAR -->
@@ -30,8 +45,8 @@
         </h1>
 
         <p class="description">
-            I build clean, efficient software with a focus on performance and user experience.
-        </p>
+    <span id="typing-text"></span>
+</p>
 
         <div class="socials">
             <a href="https://github.com/rey060" class="glow-btn" target="_blank">GitHub</a>

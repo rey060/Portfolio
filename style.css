@@ -8,7 +8,7 @@
 /* BASE */
 body {
     font-family: "Segoe UI", sans-serif;
-    background-color: #1f232a;
+    background-color: #000;
     color: white;
 }
 
@@ -22,7 +22,7 @@ body {
 
 .logo {
     font-weight: bold;
-    font-size: 22px;
+    font-size: 60px;
 }
 
 .nav-links {
@@ -176,7 +176,7 @@ body {
     margin: 0 auto;
     padding: 30px 35px;
     background: rgba(255, 255, 255, 0.03);
-    border-radius: 14px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     text-align: center;
     transition: 0.3s ease;
@@ -204,4 +204,17 @@ body {
 .hero-image img {
     width: 350px;
     border-radius: 12px;
+}
+#typing-text::after {
+    content: "|";
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+html {
+  scroll-behavior: smooth;
 }
